@@ -1,0 +1,162 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Glovo", "Arial", "Helvetica Neue", Helvetica, sans-serif;
+    background-image: url('fd.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: #333; 
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(45deg, #ffcc00, #ff6f00); /* Gradient color background */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: slide-in 0.5s ease forwards;
+    opacity: 0;
+}
+
+.container h2 {
+    color: #fff; /* Text color */
+}
+
+.container input[type="text"],
+.container input[type="email"],
+.container input[type="password"],
+.container button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.container button[type="submit"] {
+    background-color: #fff; /* White background for buttons */
+    color: #101010; /* Text color for buttons */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.container button[type="submit"]:hover {
+    background-color: #feb47b; /* Hover background color for buttons */
+}
+
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h2 {
+    
+    margin-top: 0;
+}
+
+.login-register-box {
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button[type="submit"] {
+    width: 100%;
+    padding: 14px; 
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #ff5f40; 
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: aqua; 
+}
+
+
+#myCheckbox {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#myCheckbox + label {
+    position: relative;
+    padding-left: 30px;
+}
+
+#myCheckbox + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #1b2bb9; 
+    border-radius: 50%;
+}
+
+#myCheckbox:checked + label:before {
+    background-color: #4CAF50; 
+}
+
+#myCheckbox:checked + label:after {
+    content: 'Deselectați aici';
+}
+
+#registerDataNasterii{
+    width: 100%;
+    padding: 14px; 
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+label[for="registerDataNasterii"] {
+    font-size: 14px; 
+    text-align: left; 
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 0px; 
+}
+/*
+label[for="registerAdmin"] {
+    font-size: 14px; 
+    text-align: left; 
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 0px; 
+}
+#registerAdmin {
+    transform: scale(1.5); 
+    margin-right: 10px; 
+    margin-bottom: 15px;
+}
+*/

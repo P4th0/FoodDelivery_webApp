@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autentificare</title>
+    <link rel="stylesheet" type="text/css" href="/css/auth.css">
+</head>
+<body>
+    <div class="container">
+        <label for="myCheckbox"></label>
+        
+        <div class="login-register-box" id="loginRegisterBox">
+            <h2 id="formTitle">Conectare</h2>
+            <form action="processLogin" method="POST" class="login-form" id="loginForm">
+                <input type="email" placeholder="Email" name="email" id="loginEmail" required>
+                <input type="password" placeholder="Parolă" name="password" id="loginPassword" required>
+                <button type="submit">Conectare</button>
+            </form>
+
+            <form action="processRegister" method="POST" class="register-form" id="registerForm" style="display: none;">
+                <input type="email" placeholder="Email" name="email" id="registerEmail" required>
+                <input type="password" placeholder="Parolă" name="password" id="registerPassword" required>
+                <input type="text" placeholder="Nume" name="firstName" id="registerNume" required>
+                <input type="text" placeholder="Prenume" name="lastName" id="registerPrenume" required>
+                <input type="text" placeholder="Numar Telefon" name="phoneNumber" id="registerNrTel" required>
+                <label for="registerDataNasterii">Data Nasterii</label>
+                <input type="date" placeholder="Data Nasterii" name="dateOfBirth" id="registerDataNasterii" required>
+                <input type="text" placeholder="Adresa" name="address" id="registerAdresa" required>
+                <input type="text" placeholder="Oras" name="city" id="registerOras" required>
+                
+                <!-- <input type="checkbox" placeholder="Admin" name="admin" id="registerAdmin">
+                <label for="registerAdmin">Admin</label>-->
+                
+                <button type="submit">Înregistrare</button>
+            </form>
+
+            <p id="switchFormText">Nu ai un cont? <a href="#" onclick="toggleForm()">Înregistrare</a></p>
+            <p id="switchFormText">Prin crearea unui cont, acceptați automat <a href="https://www.gofood.ro/termeni-si-conditii">Termenii de utilizare, Politica de confidențialitate și Politica de cookie-uri</a></p>
+
+            <p></p>
+            
+
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            var loginForm = document.getElementById('loginForm');
+            var registerForm = document.getElementById('registerForm');
+            var formTitle = document.getElementById('formTitle');
+            var switchFormText = document.getElementById('switchFormText');
+
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                formTitle.textContent = 'Conectare';
+                switchFormText.innerHTML = "Nu ai un cont? <a href='#' onclick='toggleForm()'>Înregistrare</a>";
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                formTitle.textContent = 'Înregistrare';
+                switchFormText.innerHTML = "Ai deja un cont? <a href='#' onclick='toggleForm()'>Conectare</a>";
+            }
+        }
+    </script>
+    <% if (locals.errorMsg != null){%>
+    <script>
+        window.alert('<%= locals.errorMsg %>');
+    </script>
+    <% } %>
+
+
+</body>
+</html>
+
